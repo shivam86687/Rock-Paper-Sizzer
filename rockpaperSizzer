@@ -1,0 +1,58 @@
+# Rock-Paper-Sizzer
+
+#include<iostream>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+int main(){
+while(true)
+{
+    cout<<"Select 1 for Rock"<<endl;
+    cout<<"Select 2 for Paper"<<endl;
+    cout<<"Select 3 for Sizzer"<<endl;
+    cout<<"Select any one option"<<endl;
+    int random_integer;
+    int lowest=1, highest=3;
+    int range=(highest-lowest)+1;
+    srand(time(NULL))  ;
+    random_integer = lowest + rand() % range ;
+    int user_input;
+    cout<<"enter  ur choice ";
+    cin>>user_input;
+   
+    if(user_input==1)
+        cout<<"U selected Rock"<<endl;
+    else if(user_input==2)
+        cout<<"U selected Paper"<<endl;
+    else if(user_input==3)
+        cout<<"U selected Sizzer"<<endl;
+    else{
+        cout<<"wrong input"<<endl;
+        return 0;
+    }
+    if(random_integer==1)
+       cout<<"computer selected Rock"<<endl;
+    else if(random_integer==2)
+       cout<<"computer selected Paper"<<endl;
+    else if(random_integer==3)
+        cout<<"computer selected Sizzer"<<endl;
+    else
+        cout<<"wrong input"<<endl ;
+    if(user_input==random_integer)
+        cout<<"Tie";
+    else if(user_input==1 && random_integer == 2)
+        cout<<"oops ! Computer Won" <<endl;
+    else if(user_input==2 && random_integer == 3)
+        cout<<"oops ! Computer Won";
+    else if(user_input==3 && random_integer == 1)
+        cout<<"oops ! Computer Won";
+    else if(user_input==1 && random_integer == 3)
+        cout<<"Congrats ! You Won";
+    else if(user_input==2 && random_integer == 1)
+        cout<<"Congrats ! You Won";
+    else if(user_input==3 && random_integer == 2)
+        cout<<"Congrats ! You Won";
+ cout<<"\n-------------------------------------------------\n";   
+
+     }
+}
